@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwyktxiphfq5g"]
+
+[ext_resource type="Script" path="res://move ball.gd" id="1_60t1m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aawyg"]
+radius = 15.0333
+
+[sub_resource type="Gradient" id="Gradient_f5mjd"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b34o3"]
+gradient = SubResource("Gradient_f5mjd")
+
+[node name="Ball" type="AnimatableBody2D"]
+sync_to_physics = false
+script = ExtResource("1_60t1m")
+speed = 250.0
+max_speed = 830.0
+acceleration = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aawyg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40.5, 0)
+rotation = -3.14159
+scale = Vector2(0.316406, 5.25)
+texture = SubResource("GradientTexture1D_b34o3")

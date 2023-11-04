@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dycoknbrqqy6d"]
+
+[ext_resource type="Script" path="res://Brick.gd" id="1_nglyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld613"]
+size = Vector2(30, 20)
+
+[node name="ShortBrick" type="StaticBody2D"]
+script = ExtResource("1_nglyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ld613")

@@ -1,0 +1,251 @@
+[gd_scene load_steps=18 format=3 uid="uid://7wgntc6827eu"]
+
+[ext_resource type="Script" path="res://scores.gd" id="1_imaps"]
+[ext_resource type="PackedScene" uid="uid://c6l2ewydd2r8k" path="res://bounding_box.tscn" id="2_6skbq"]
+[ext_resource type="PackedScene" uid="uid://dwyktxiphfq5g" path="res://ball.tscn" id="2_q5t4y"]
+[ext_resource type="Texture2D" uid="uid://g8shcsyqewcg" path="res://icon.svg" id="4_voyps"]
+[ext_resource type="PackedScene" uid="uid://jgwweh2jfy4x" path="res://brick.tscn" id="5_i0e1g"]
+[ext_resource type="PackedScene" uid="uid://c5bawmll2xkdm" path="res://paddle_1.tscn" id="6_lv4pl"]
+[ext_resource type="AudioStream" uid="uid://pq6o886s5n88" path="res://pickupCoin.wav" id="6_mdip1"]
+[ext_resource type="Script" path="res://Space to Restart.gd" id="8_ejjt0"]
+[ext_resource type="Script" path="res://Left Player 1 Score.gd" id="9_e082n"]
+[ext_resource type="Script" path="res://Right Player 2 Score.gd" id="10_fotht"]
+[ext_resource type="Script" path="res://CurrentBallPoints.gd" id="11_734rf"]
+[ext_resource type="PackedScene" uid="uid://c6m1cayq0ouom" path="res://character_body_2d.tscn" id="11_rulne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k6y0"]
+size = Vector2(20, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lognl"]
+size = Vector2(20, 674)
+
+[sub_resource type="LabelSettings" id="LabelSettings_05t4o"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_t701w"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_vo1wm"]
+font_size = 20
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_imaps")
+metadata/_edit_vertical_guides_ = [1154.0, 1118.0, 35.0]
+metadata/_edit_horizontal_guides_ = [15.0]
+
+[node name="Bounding Box" parent="." instance=ExtResource("2_6skbq")]
+
+[node name="Ball" parent="." instance=ExtResource("2_q5t4y")]
+position = Vector2(608, 39)
+speed = 330.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 323)
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.282353)
+position = Vector2(610, 321)
+scale = Vector2(5.0625, 5.0625)
+texture = ExtResource("4_voyps")
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Brick" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(472, 268)
+
+[node name="Brick2" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(568, 268)
+
+[node name="Brick3" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(664, 268)
+
+[node name="Brick4" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(760, 268)
+
+[node name="Brick11" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(472, 392)
+
+[node name="Brick14" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(568, 392)
+
+[node name="Brick15" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(664, 392)
+
+[node name="Brick16" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(760, 392)
+
+[node name="Brick17" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(515, 239)
+
+[node name="Brick18" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(611, 239)
+
+[node name="Brick19" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(707, 239)
+
+[node name="Brick20" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(563, 207)
+
+[node name="Brick21" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(659, 207)
+
+[node name="Brick22" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(611, 182)
+
+[node name="Brick24" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(517, 461)
+
+[node name="Brick25" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(608, 433)
+
+[node name="Brick26" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(702, 462)
+
+[node name="Brick23" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(544, 520)
+
+[node name="Brick27" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(640, 520)
+
+[node name="Brick28" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(613, 159)
+
+[node name="Brick29" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(522, 182)
+
+[node name="Brick30" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(699, 182)
+
+[node name="Brick33" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(787, 423)
+
+[node name="Brick34" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(432, 424)
+
+[node name="Brick35" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(480, 491)
+
+[node name="Brick36" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(576, 491)
+
+[node name="Brick37" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(668, 491)
+
+[node name="Brick38" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(764, 491)
+
+[node name="Brick39" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(611, 331)
+rotation = 1.5708
+
+[node name="Brick5" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(503, 355)
+
+[node name="Brick6" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(503, 330)
+
+[node name="Brick7" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(504, 303)
+
+[node name="Brick8" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(719, 352)
+
+[node name="Brick9" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(719, 327)
+
+[node name="Brick10" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(720, 300)
+
+[node name="Brick31" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(397, 209)
+rotation = -0.785398
+
+[node name="Brick32" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(414, 227)
+rotation = -0.785398
+
+[node name="Brick40" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(693, 120)
+rotation = 0.371755
+
+[node name="Brick41" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(684, 142)
+rotation = 0.371755
+
+[node name="Brick42" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(818, 212)
+rotation = 0.785398
+
+[node name="Brick43" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(802, 229)
+rotation = 0.785398
+
+[node name="Brick44" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(530, 120)
+rotation = -0.436332
+
+[node name="Brick45" parent="Bricks" instance=ExtResource("5_i0e1g")]
+position = Vector2(541, 141)
+rotation = -0.436332
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mdip1")
+
+[node name="Left Paddle" parent="." instance=ExtResource("6_lv4pl")]
+position = Vector2(36, 324)
+
+[node name="Left Goal" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Goal"]
+position = Vector2(0, 319)
+shape = SubResource("RectangleShape2D_0k6y0")
+
+[node name="Right Goal" type="Area2D" parent="."]
+visible = false
+position = Vector2(1154, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Goal"]
+position = Vector2(-2, 304)
+shape = SubResource("RectangleShape2D_lognl")
+
+[node name="Space to Restart" type="RichTextLabel" parent="."]
+offset_left = 19.0
+offset_top = 93.0
+offset_right = 131.0
+offset_bottom = 139.0
+scale = Vector2(10, 10)
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("8_ejjt0")
+
+[node name="Left Player 1 Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Player 1 Score:"
+label_settings = SubResource("LabelSettings_05t4o")
+script = ExtResource("9_e082n")
+
+[node name="Right Player 2 Score" type="Label" parent="."]
+offset_left = 995.0
+offset_top = 1.0
+offset_right = 1161.0
+offset_bottom = 32.0
+text = "Player 2 Score:"
+label_settings = SubResource("LabelSettings_t701w")
+script = ExtResource("10_fotht")
+
+[node name="CurrentBallPoints" type="Label" parent="."]
+offset_left = 529.0
+offset_top = 2.0
+offset_right = 704.0
+offset_bottom = 30.0
+text = "Ball Currently Worth:"
+label_settings = SubResource("LabelSettings_vo1wm")
+script = ExtResource("11_734rf")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("11_rulne")]
+position = Vector2(1116, 324)
+
+[connection signal="body_entered" from="Left Goal" to="Ball" method="_on_left_goal_body_entered"]
+[connection signal="body_entered" from="Right Goal" to="Ball" method="_on_right_goal_body_entered"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5bawmll2xkdm"]
+
+[ext_resource type="Script" path="res://left_paddle.gd" id="1_gn5sh"]
+
+[sub_resource type="Gradient" id="Gradient_5lvrv"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ge1e4"]
+gradient = SubResource("Gradient_5lvrv")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_reorg"]
+radius = 16.0
+height = 216.0
+
+[node name="Left Paddle" type="CharacterBody2D"]
+position = Vector2(36, 132)
+motion_mode = 1
+script = ExtResource("1_gn5sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.125, 216)
+texture = SubResource("GradientTexture1D_ge1e4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_reorg")
